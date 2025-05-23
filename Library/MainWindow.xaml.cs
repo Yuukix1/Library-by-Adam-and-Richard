@@ -17,7 +17,7 @@ namespace Library
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter both username and password.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Add meg a felhasználóneved és jelszavad.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -29,7 +29,7 @@ namespace Library
             }
             else
             {
-                MessageBox.Show("Login failed. Incorrect username or password.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Sikertelen bejelentkezés. Helytelen jelszó vagy felhasználónév.", "Sikertelen bejelentkezés", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -40,12 +40,12 @@ namespace Library
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter both username and password.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Add meg a felhasználóneved és jelszavad.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             bool registered = AuthService.Register(username, password);
-            MessageBox.Show(registered ? "Registration successful!" : "Username already exists.", "Register", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show(registered ? "Sikeres Regisztráció!" : "A felhasználónév foglalt.", "Regisztál", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void UsernameBox_GotFocus(object sender, RoutedEventArgs e)

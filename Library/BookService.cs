@@ -14,7 +14,7 @@ namespace Library
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand("SELECT id, title, author FROM books", conn);
+            var cmd = new MySqlCommand("SELECT Id, Cím, Szerző, Ár, Elérhetőség FROM books", conn);
             using var adapter = new MySqlDataAdapter(cmd);
             adapter.Fill(dt);
 
@@ -26,10 +26,9 @@ namespace Library
             using var conn = new MySqlConnection(ConnectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand("INSERT INTO transactions (user_id, book_id, action, date) VALUES (@user, @book, @action, NOW())", conn);
+            var cmd = new MySqlCommand("INSERT INTO transactions (user_id, book_id, date) VALUES (@user, @book, NOW())", conn);
             cmd.Parameters.AddWithValue("@user", userId);
             cmd.Parameters.AddWithValue("@book", bookId);
-            cmd.Parameters.AddWithValue("@action", action);
             cmd.ExecuteNonQuery();
         }
     }

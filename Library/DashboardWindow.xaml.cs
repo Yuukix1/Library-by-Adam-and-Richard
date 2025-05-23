@@ -24,7 +24,7 @@ namespace Library
             {
                 int bookId = Convert.ToInt32(row["id"]);
                 BookService.RecordTransaction(_userId, bookId, "rent");
-                MessageBox.Show($"Book rented: {row["title"]}");
+                MessageBox.Show($"Könyv kikölcsönzöve: {row["Cím"]}");
             }
         }
 
@@ -34,7 +34,7 @@ namespace Library
             {
                 int bookId = Convert.ToInt32(row["id"]);
                 BookService.RecordTransaction(_userId, bookId, "buy");
-                MessageBox.Show($"Book purchased: {row["title"]}");
+                MessageBox.Show($"Könyv megvásárolva: {row["Cím"]}");
             }
         }
     }

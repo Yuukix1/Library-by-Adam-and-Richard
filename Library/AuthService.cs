@@ -15,7 +15,7 @@ namespace Library
 
             var cmd = new MySqlCommand("SELECT id FROM users WHERE username = @username AND password = @password", conn);
             cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password); // Use hashing in production!
+            cmd.Parameters.AddWithValue("@password", password); 
 
             var result = cmd.ExecuteScalar();
 
